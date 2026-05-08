@@ -129,6 +129,8 @@ $pageTitle = 'Dashboard Home';
 $activeMenu = 'dashboard';
 $bodyClass = 'admin-dashboard-page';
 $hideAdminPageTitle = true;
+$dashCssVer = file_exists(__DIR__ . '/../assets/css/admin-dashboard.css') ? (string)filemtime(__DIR__ . '/../assets/css/admin-dashboard.css') : (string)time();
+$pageStyles = [base_url('assets/css/admin-dashboard.css?v=' . $dashCssVer)];
 require_once __DIR__ . '/_top.php';
 ?>
 
@@ -176,6 +178,7 @@ require_once __DIR__ . '/_top.php';
         </div>
     </section>
 
+    <div class="dashboard-section-label"><span>Overview</span><a class="dashboard-link" href="<?= esc(base_url('admin/reports.php')); ?>">View All</a></div>
     <section class="dashboard-kpi-grid" aria-label="Key performance indicators">
         <?php foreach ($kpiCards as $card): ?>
             <article class="dashboard-kpi-card tone-<?= esc($card['tone']); ?>">
@@ -308,13 +311,17 @@ require_once __DIR__ . '/_top.php';
                 <?php foreach ($latestComplaints as $complaint): ?>
                     <?php $cStatus = strtolower((string)($complaint['status'] ?? 'pending')); ?>
                     <li>
-                        <div>
-                            <strong><?= esc((string)$complaint['issue']); ?></strong>
-                            <p><?= esc((string)$complaint['name']); ?> • <?= esc((string)$complaint['district']); ?></p>
+                        <div class="dashboard-complaint-row-main">
+                            <span class="dashboard-complaint-icon <?= $cStatus === 'resolved' ? 'resolved' : 'pending'; ?>"><i class="fa-solid fa-comment-dots"></i></span>
+                            <div>
+                                <strong><?= esc((string)$complaint['issue']); ?></strong>
+                                <p><?= esc((string)$complaint['name']); ?> • <?= esc((string)$complaint['district']); ?></p>
+                                <small><?= esc(date('d M Y, g:i A', strtotime((string)$complaint['created_at']))); ?></small>
+                            </div>
                         </div>
                         <div class="dashboard-complaint-meta">
                             <span class="badge-soft <?= $cStatus === 'resolved' ? 'success' : 'warning'; ?>"><?= esc(ucfirst($cStatus)); ?></span>
-                            <small><?= esc(date('d M Y', strtotime((string)$complaint['created_at']))); ?></small>
+                            <i class="fa-solid fa-chevron-right dashboard-complaint-arrow"></i>
                         </div>
                     </li>
                 <?php endforeach; ?>
