@@ -799,37 +799,50 @@ body.admin-dashboard-page .admin-content {
    Mobile dashboard — 768px and below
    ========================================================= */
 @media (max-width: 768px) {
+
+  /* Prevent horizontal overflow on the whole page */
+  body.admin-dashboard-page,
+  body.admin-dashboard-page .admin-shell,
   body.admin-dashboard-page .admin-content {
-    padding: 10px 10px 100px;
+    overflow-x: hidden;
+    max-width: 100vw;
   }
 
-  /* — Topbar: hamburger | title block | actions — */
+  body.admin-dashboard-page .admin-content {
+    padding: 8px 8px 96px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  /* — Topbar: force single row, hide search, hide extras — */
   body.admin-dashboard-page .admin-topbar {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: space-between;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
     gap: 10px;
     padding: 10px 12px;
-    border-radius: 16px;
-    margin-bottom: 10px;
+    border-radius: 14px;
+    margin-bottom: 8px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   body.admin-dashboard-page .admin-topbar-left {
-    display: flex;
-    align-items: center;
+    display: flex !important;
+    align-items: center !important;
     gap: 10px;
-    flex: 1 1 0;
-    min-width: 0;
-    width: auto;
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    width: auto !important;
   }
 
   body.admin-dashboard-page .admin-topbar-search {
-    display: none;
-    width: 0;
+    display: none !important;
+    width: 0 !important;
   }
 
-  /* Inject title block via pseudo on the topbar-left after the menu toggle */
+  /* Title after the hamburger button */
   body.admin-dashboard-page .admin-topbar-left::after {
     content: "Dashboard";
     font-family: 'Sora', sans-serif;
@@ -837,38 +850,37 @@ body.admin-dashboard-page .admin-content {
     font-weight: 700;
     color: #123052;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   body.admin-dashboard-page .admin-topbar-actions {
-    display: flex;
-    align-items: center;
+    display: flex !important;
+    align-items: center !important;
     gap: 6px;
-    width: auto;
-    flex-wrap: nowrap;
+    width: auto !important;
+    flex-wrap: nowrap !important;
     flex-shrink: 0;
   }
 
-  /* Hide clock & date on mobile to save space */
+  /* Hide clock, date, dark mode toggle */
   body.admin-dashboard-page .admin-clock,
   body.admin-dashboard-page .admin-date,
   body.admin-dashboard-page #darkModeToggle {
-    display: none;
+    display: none !important;
   }
 
-  /* Show profile avatar compactly */
   body.admin-dashboard-page .admin-profile-name {
-    display: none;
+    display: none !important;
   }
 
   body.admin-dashboard-page .admin-profile-btn .fa-chevron-down {
-    display: none;
+    display: none !important;
   }
 
   /* — Dashboard layout — */
   .dashboard-app {
     gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .dashboard-hero,
@@ -878,16 +890,21 @@ body.admin-dashboard-page .admin-content {
     border-radius: 16px;
   }
 
-  /* — Hero: single column compact — */
+  /* — Hero: single column, glass on top — */
   .dashboard-hero {
     grid-template-columns: 1fr;
-    padding: 18px 16px 16px;
-    gap: 14px;
+    padding: 16px;
+    gap: 12px;
+    overflow: hidden;
+  }
+
+  .dashboard-hero-visual {
+    order: -1;
   }
 
   .dashboard-hero-copy h1 {
-    font-size: 22px;
-    margin: 8px 0 6px;
+    font-size: 20px;
+    margin: 6px 0 5px;
   }
 
   .dashboard-hero-copy p {
@@ -896,17 +913,14 @@ body.admin-dashboard-page .admin-content {
   }
 
   .dashboard-hero-meta {
-    margin-top: 10px;
+    margin-top: 8px;
     gap: 6px;
+    flex-wrap: wrap;
   }
 
   .dashboard-hero-meta span {
-    padding: 6px 10px;
+    padding: 5px 9px;
     font-size: 11px;
-  }
-
-  .dashboard-hero-visual {
-    order: -1;
   }
 
   .dashboard-hero-glass {
@@ -915,30 +929,34 @@ body.admin-dashboard-page .admin-content {
   }
 
   .dashboard-hero-glass strong {
-    font-size: 36px;
+    font-size: 34px;
   }
 
   .dashboard-hero-glass p {
     font-size: 12px;
+    margin: 0;
   }
 
   .dashboard-hero-mini-grid {
     gap: 6px;
-    margin-top: 10px;
+    margin-top: 8px;
+    flex-wrap: nowrap;
   }
 
   .dashboard-hero-mini-grid > div {
-    flex: 1 1 calc(33.33% - 6px);
-    padding: 8px 10px;
-    border-radius: 12px;
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 8px;
+    border-radius: 10px;
   }
 
   .dashboard-hero-mini-grid span {
-    font-size: 10px;
+    font-size: 9px;
+    letter-spacing: 0.03em;
   }
 
   .dashboard-hero-mini-grid strong {
-    font-size: 14px;
+    font-size: 13px;
     margin-top: 2px;
   }
 
@@ -953,14 +971,12 @@ body.admin-dashboard-page .admin-content {
     scrollbar-width: none;
   }
 
-  .dashboard-action-strip::-webkit-scrollbar {
-    display: none;
-  }
+  .dashboard-action-strip::-webkit-scrollbar { display: none; }
 
   .dashboard-action-card {
-    min-width: 88px;
-    flex: 0 0 88px;
-    min-height: 88px;
+    min-width: 86px;
+    flex: 0 0 86px;
+    min-height: 86px;
     padding: 12px 8px;
     border-radius: 14px;
     scroll-snap-align: start;
@@ -980,11 +996,11 @@ body.admin-dashboard-page .admin-content {
   /* — Section heads — */
   .dashboard-section-head {
     align-items: center;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   .dashboard-section-head h2 {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .dashboard-section-head p {
@@ -998,17 +1014,19 @@ body.admin-dashboard-page .admin-content {
   }
 
   .dashboard-kpi-card {
-    padding: 13px 12px;
+    padding: 12px;
     border-radius: 14px;
   }
 
   .dashboard-kpi-card .metric-label {
-    font-size: 11px;
+    font-size: 10px;
     line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
   }
 
   .dashboard-kpi-card .metric-value {
-    font-size: 22px;
+    font-size: 24px;
     margin-top: 4px;
   }
 
@@ -1031,15 +1049,15 @@ body.admin-dashboard-page .admin-content {
   .dashboard-kpi-card.tone-slate   .metric-value { color: #475569; }
   .dashboard-kpi-card.tone-indigo  .metric-value { color: #3730a3; }
 
-  /* — Grid 2 columns — */
+  /* — Grid 2: both chart and notifications full width — */
   .dashboard-grid-2 {
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 
-  /* Chart panel takes full width */
-  .dashboard-chart-panel {
-    grid-column: 1 / -1;
+  .dashboard-chart-panel,
+  .dashboard-notification-panel {
+    grid-column: auto;
   }
 
   .dashboard-chart-wrap {
@@ -1050,11 +1068,7 @@ body.admin-dashboard-page .admin-content {
     height: 200px !important;
   }
 
-  /* Notification panel full width */
-  .dashboard-notification-panel {
-    grid-column: 1 / -1;
-  }
-
+  /* Notification badges */
   .dashboard-notification-list li a {
     padding: 10px 0;
   }
@@ -1063,16 +1077,16 @@ body.admin-dashboard-page .admin-content {
     font-size: 13px;
   }
 
-  /* Notification count as circular badge */
   .dashboard-notification-list li a strong {
-    min-width: 26px;
-    height: 26px;
+    min-width: 24px;
+    height: 24px;
     border-radius: 999px;
     background: #0d47a1;
     color: #fff;
     font-size: 12px;
     display: grid;
     place-items: center;
+    padding: 0 6px;
   }
 
   /* — Recent registrations — */
@@ -1082,23 +1096,13 @@ body.admin-dashboard-page .admin-content {
     gap: 8px;
   }
 
-  .dashboard-mobile-row-main strong {
-    font-size: 14px;
-  }
-
+  .dashboard-mobile-row-main strong { font-size: 14px; }
   .dashboard-mobile-row-main p,
-  .dashboard-mobile-row-main small {
-    font-size: 12px;
-  }
-
-  .dashboard-mobile-row-meta small {
-    font-size: 11px;
-  }
+  .dashboard-mobile-row-main small { font-size: 12px; }
+  .dashboard-mobile-row-meta small  { font-size: 11px; }
 
   /* — Complaint list — */
-  .dashboard-complaint-summary {
-    gap: 6px;
-  }
+  .dashboard-complaint-summary { gap: 6px; }
 
   .dashboard-stat-pill {
     flex: 1 1 calc(33.33% - 6px);
@@ -1106,112 +1110,27 @@ body.admin-dashboard-page .admin-content {
     border-radius: 12px;
   }
 
-  .dashboard-stat-pill strong {
-    font-size: 18px;
-  }
+  .dashboard-stat-pill strong { font-size: 18px; }
+  .dashboard-stat-pill span   { font-size: 10px; }
 
-  .dashboard-stat-pill span {
-    font-size: 10px;
-  }
-
-  .dashboard-complaint-list li {
-    padding: 10px 0;
-    gap: 8px;
-  }
-
-  .dashboard-complaint-list strong {
-    font-size: 13px;
-  }
-
-  .dashboard-complaint-list li p {
-    font-size: 12px;
-  }
+  .dashboard-complaint-list li { padding: 10px 0; gap: 8px; }
+  .dashboard-complaint-list strong { font-size: 13px; }
+  .dashboard-complaint-list li p   { font-size: 12px; }
 
   .dashboard-complaint-meta {
     text-align: right;
     flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
   }
 
-  /* — Progress/analytics — */
-  .dashboard-progress-head span {
-    font-size: 13px;
-  }
+  /* — Progress bars — */
+  .dashboard-progress-head span { font-size: 13px; }
+  .dashboard-progress { height: 8px; }
 
-  .dashboard-progress {
-    height: 8px;
-  }
-}
-
-/* =========================================================
-   Small phones — 480px and below
-   ========================================================= */
-@media (max-width: 480px) {
-  body.admin-dashboard-page .admin-content {
-    padding: 8px 8px 100px;
-  }
-
-  /* Grid-2: single column on very small screens */
-  .dashboard-grid-2 {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-
-  /* Chart always full width */
-  .dashboard-chart-panel,
-  .dashboard-notification-panel {
-    grid-column: auto;
-  }
-
-  .dashboard-chart-wrap {
-    min-height: 180px;
-  }
-
-  #membershipGrowthChart {
-    height: 180px !important;
-  }
-
-  /* Hero glass strip stays compact */
-  .dashboard-hero-glass strong {
-    font-size: 32px;
-  }
-
-  /* Actions strip tighter */
-  .dashboard-action-card {
-    min-width: 80px;
-    flex-basis: 80px;
-    min-height: 80px;
-    padding: 10px 6px;
-  }
-
-  .dashboard-action-icon {
-    width: 32px;
-    height: 32px;
-    font-size: 14px;
-  }
-
-  .dashboard-action-card strong {
-    font-size: 11px;
-  }
-
-  /* KPI: tighter padding */
-  .dashboard-kpi-grid {
-    gap: 6px;
-  }
-
-  .dashboard-kpi-card {
-    padding: 11px 10px;
-  }
-
-  .dashboard-kpi-card .metric-value {
-    font-size: 20px;
-  }
-
-  /* Complaint summary 3-col */
-  .dashboard-stat-pill {
-    flex: 1 1 calc(33.33% - 6px);
-  }
-
-  /* — Bottom nav — */
+  /* — Bottom nav visible from 768px down — */
   .dashboard-bottom-nav {
     position: fixed;
     left: 8px;
@@ -1255,9 +1174,7 @@ body.admin-dashboard-page .admin-content {
     background: rgba(13, 71, 161, 0.08);
   }
 
-  .dashboard-bottom-nav a.active i {
-    color: #0d47a1;
-  }
+  .dashboard-bottom-nav a.active i { color: #0d47a1; }
 
   /* — FAB — */
   .dashboard-fab {
@@ -1281,13 +1198,42 @@ body.admin-dashboard-page .admin-content {
   .dashboard-fab:hover,
   .dashboard-fab:active {
     transform: scale(1.1) rotate(-2deg);
-    box-shadow:
-      0 20px 44px rgba(13, 71, 161, 0.48),
-      0 6px 14px rgba(13, 39, 78, 0.24);
   }
 
-  .dashboard-fab i {
-    font-size: 18px;
+  .dashboard-fab i { font-size: 18px; }
+}
+
+/* =========================================================
+   Small phones — 480px and below
+   ========================================================= */
+@media (max-width: 480px) {
+  body.admin-dashboard-page .admin-content {
+    padding: 6px 6px 96px;
   }
+
+  .dashboard-kpi-grid { gap: 6px; }
+
+  .dashboard-kpi-card {
+    padding: 11px 10px;
+  }
+
+  .dashboard-kpi-card .metric-value { font-size: 22px; }
+
+  .dashboard-hero-glass strong { font-size: 30px; }
+
+  .dashboard-action-card {
+    min-width: 78px;
+    flex-basis: 78px;
+    min-height: 78px;
+    padding: 10px 6px;
+  }
+
+  .dashboard-action-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+  }
+
+  .dashboard-action-card strong { font-size: 11px; }
 }
 

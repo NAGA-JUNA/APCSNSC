@@ -1363,3 +1363,20 @@ body.admin-dark {
         flex: 1;
     }
 }
+
+/* Dashboard page: undo the 992px wrap-everything rules so our single-row topbar works */
+@media (max-width: 992px) {
+    body.admin-dashboard-page .admin-topbar {
+        flex-wrap: nowrap;
+    }
+
+    body.admin-dashboard-page .admin-topbar-left,
+    body.admin-dashboard-page .admin-topbar-search {
+        width: auto;
+    }
+
+    body.admin-dashboard-page .admin-topbar-actions {
+        width: auto;
+        justify-content: flex-end;
+    }
+}
