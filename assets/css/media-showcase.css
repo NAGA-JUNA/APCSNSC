@@ -1,0 +1,82 @@
+/* Media Showcase - scoped styles
+   Modern card-based layout, responsive, with subtle gradients and shadows
+*/
+.media-showcase { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; color: #153b66; }
+.media-showcase .ms-container { max-width: 1100px; margin: 18px auto; padding: 8px; }
+.media-showcase .ms-header { margin-bottom: 14px; }
+.media-showcase .ms-kicker { display:inline-block; padding:6px 12px; border-radius:999px; background:linear-gradient(90deg,#eaf9f3,#eef6ff); color:#157347; font-weight:800; font-size:0.72rem; letter-spacing:.06em; }
+.media-showcase h2 { margin:8px 0 6px; font-size:1.4rem; }
+.media-showcase .ms-sub { margin:0; color:#5f7082 }
+
+.ms-grid { display:grid; grid-template-columns: 1fr 360px; gap:18px; align-items:start; }
+.ms-left, .ms-right { min-width:0 }
+
+.ms-card { background:white; border-radius:14px; padding:14px; box-shadow:0 12px 30px rgba(14,49,86,0.06); border:1px solid rgba(14,49,86,0.04); }
+.ms-featured .ms-iframe-wrap { border-radius:10px; overflow:hidden; background:#eaf1fb }
+.ms-iframe-wrap iframe { width:100%; height:360px; display:block; border:0 }
+.ms-skeleton.ms-video-skel { height:360px; width:100%; border-radius:10px; background:linear-gradient(90deg,#f2f6fa,#eef9f6,#f2f6fa); animation: shimmer 1.2s linear infinite; }
+@keyframes shimmer { 0%{background-position:-300px 0}100%{background-position:300px 0} }
+
+.ms-meta { margin-top:12px; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap }
+.ms-title { margin:0; font-size:1.05rem }
+.ms-date { color:#6b7e90; font-size:0.88rem }
+.ms-btn-outline { background:transparent; border:1px solid #d7e6f6; padding:8px 12px; border-radius:8px; color:#1f3e64; text-decoration:none }
+
+.ms-playlist-list { display:flex; flex-direction:column; gap:8px; max-height:420px; overflow:auto; padding-right:4px }
+.ms-playlist-item { display:flex; gap:8px; align-items:center; padding:8px; border-radius:10px; background:#fff; border:1px solid #eef4fb; cursor:pointer }
+.ms-playlist-item.is-active { box-shadow:0 10px 20px rgba(31,91,151,0.12); border-color:#2d7cc2 }
+.ms-thumb { width:92px; height:60px; object-fit:cover; border-radius:8px }
+.ms-playlist-copy strong { display:block; font-size:0.9rem }
+.ms-playlist-copy small { color:#6b7e90 }
+
+.ms-tabs { margin-top:18px }
+.ms-tabs-nav { display:flex; gap:8px; border-bottom:1px solid #eef3f8; padding-bottom:8px; overflow:auto }
+.ms-tab { background:transparent; border:0; padding:8px 12px; cursor:pointer; border-radius:999px; color:#22507a }
+.ms-tab.is-active { background:linear-gradient(90deg,#eaf9f3,#ecf6ff); font-weight:700 }
+
+.ms-tabs-panels { margin-top:12px }
+.ms-panel { display:none }
+.ms-panel.is-open { display:block }
+
+.ms-videos-grid { display:grid; grid-template-columns: repeat(3,1fr); gap:10px }
+.ms-media-card { border-radius:10px; overflow:hidden; display:flex; flex-direction:column }
+.ms-media-thumb img { width:100%; height:120px; object-fit:cover }
+.ms-media-body { padding:8px }
+
+.ms-gallery-controls { display:flex; justify-content:space-between; align-items:center; gap:12px }
+.ms-filters { display:flex; gap:8px; flex-wrap:wrap }
+.ms-filter { padding:6px 10px; border-radius:999px; border:1px solid #d6e4f3; background:#f5fbff; cursor:pointer }
+.ms-filter.is-active { background:linear-gradient(135deg,#126b45,#1f3f68); color:#fff; border-color:transparent }
+.ms-gallery-viewport { overflow:hidden; margin-top:12px }
+.ms-gallery-track { display:flex; gap:10px; transition:transform .35s ease }
+.ms-gallery-card { min-width:220px; border-radius:10px; overflow:hidden; position:relative; cursor:pointer }
+.ms-gallery-card img { width:100%; height:140px; object-fit:cover; display:block; transition:transform .3s ease }
+.ms-gallery-card:hover img { transform:scale(1.05) }
+.ms-gallery-card figcaption { position:absolute; left:8px; bottom:8px; color:#fff; background:linear-gradient(180deg,transparent,rgba(0,0,0,0.45)); padding:6px 8px; border-radius:6px }
+
+.ms-news-grid { display:grid; grid-template-columns: repeat(3,1fr); gap:12px }
+.ms-news-card { display:flex; gap:12px; align-items:center; padding:12px; border-radius:10px; background:#fff; border:1px solid #eaf1fb }
+.ms-news-badge { background:linear-gradient(135deg,#eaf6ff,#eefaf0); color:#1a6b4b; padding:8px 10px; border-radius:8px; font-weight:700 }
+.ms-news-meta .ms-news-cat { background:#f1f7fb; color:#17608f; padding:4px 6px; border-radius:6px; font-size:0.72rem }
+
+.ms-news-actions { margin-top:12px; text-align:right }
+.ms-btn-link { background:transparent; color:#157347; border:0; font-weight:700 }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .ms-grid { grid-template-columns: 1fr 300px }
+  .ms-videos-grid { grid-template-columns: repeat(2,1fr) }
+  .ms-news-grid { grid-template-columns: repeat(2,1fr) }
+}
+@media (max-width: 768px) {
+  .ms-grid { grid-template-columns: 1fr; }
+  .ms-playlist-list { display:flex; gap:8px; overflow:auto; flex-direction:row; max-height:none }
+  .ms-playlist-item { min-width:260px; flex:0 0 auto }
+  .ms-videos-grid { grid-template-columns: 1fr }
+  .ms-news-grid { grid-template-columns: 1fr }
+  .ms-gallery-card { min-width:60%; }
+}
+
+/* Utility */
+.lazy { opacity:0; transform:translateY(6px); transition:opacity .3s ease, transform .35s ease }
+.lazy.loaded { opacity:1; transform:none }

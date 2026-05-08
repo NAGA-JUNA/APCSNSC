@@ -1,0 +1,202 @@
+.role-management-shell {
+    border-radius: 18px;
+    border: 1px solid var(--APCSNSC-border);
+    box-shadow: 0 14px 34px rgba(15, 39, 71, 0.08);
+}
+
+.role-summary-grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.role-summary-card {
+    border: 1px solid var(--APCSNSC-border);
+    border-radius: 14px;
+    padding: 12px;
+    background: linear-gradient(160deg, #f8fcff 0%, #eef5ff 100%);
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.role-summary-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(17, 47, 87, 0.12);
+}
+
+.role-summary-card p {
+    margin: 0;
+    color: var(--APCSNSC-muted);
+    font-size: 13px;
+}
+
+.role-summary-card h3 {
+    margin: 6px 0 0;
+    color: var(--APCSNSC-text);
+    font-size: 26px;
+    font-family: 'Sora', sans-serif;
+}
+
+.role-filter-bar,
+.bulk-action-bar {
+    border: 1px solid var(--APCSNSC-border);
+    border-radius: 14px;
+    padding: 12px;
+    background: #f8fbff;
+}
+
+.role-table thead th {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+}
+
+.role-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.role-table tbody tr:hover {
+    background: #f1f7ff;
+}
+
+.role-badge {
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.role-badge.super_admin {
+    background: #ecf4ff;
+    color: #184f8b;
+}
+
+.role-badge.state_president {
+    background: #eafaf2;
+    color: #16724d;
+}
+
+.role-badge.district_president {
+    background: #fff5e9;
+    color: #8a5b18;
+}
+
+.role-badge.media_admin {
+    background: #f1ecff;
+    color: #5740a3;
+}
+
+.role-badge.complaint_admin {
+    background: #ffeef0;
+    color: #aa233c;
+}
+
+.role-badge.member-role-neutral {
+    background: #eef3f8;
+    color: #2b4a64;
+}
+
+.status-pill {
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 10px;
+}
+
+.status-pill.active {
+    background: #eafaf2;
+    color: #15724d;
+}
+
+.status-pill.disabled {
+    background: #fff0f0;
+    color: #a82424;
+}
+
+.permission-chip {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    border-radius: 999px;
+    padding: 4px 8px;
+    border: 1px solid #d4dfec;
+    background: #f8fbff;
+    margin: 2px 3px 2px 0;
+}
+
+.action-btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.action-btn-group .btn {
+    font-size: 11px;
+    padding: 4px 8px;
+}
+
+.permission-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.log-list-wrap {
+    border: 1px solid var(--APCSNSC-border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.log-item {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--APCSNSC-border);
+    background: #fff;
+}
+
+.log-item:last-child {
+    border-bottom: 0;
+}
+
+.log-item .meta {
+    font-size: 12px;
+    color: var(--APCSNSC-muted);
+}
+
+body.admin-dark .role-filter-bar,
+body.admin-dark .bulk-action-bar,
+body.admin-dark .role-summary-card,
+body.admin-dark .log-item {
+    background: #0f1d37;
+}
+
+body.admin-dark .role-badge.member-role-neutral {
+    background: #1b2d47;
+    color: #d7e4f2;
+}
+
+body.admin-dark .role-table tbody tr:hover {
+    background: #132642;
+}
+
+@media (max-width: 1200px) {
+    .role-summary-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .permission-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 767px) {
+    .role-summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .permission-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}

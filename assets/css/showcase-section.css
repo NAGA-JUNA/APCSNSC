@@ -1,0 +1,649 @@
+.showcase-section-apcs-home,
+.apcs-home-showcase {
+    --apcs-bg: linear-gradient(140deg, #f4fbf7 0%, #f4f8ff 42%, #eef6ff 100%);
+    --apcs-card: #ffffff;
+    --apcs-border: #d7e5df;
+    --apcs-border-soft: #e6edf0;
+    --apcs-text: #12263f;
+    --apcs-muted: #5f7082;
+    --apcs-navy: #153b66;
+    --apcs-green: #157347;
+    --apcs-shadow: 0 18px 40px rgba(14, 49, 86, 0.13);
+}
+
+.showcase-section-apcs-home .showcase-section-shell,
+.apcs-home-showcase .showcase-section-shell {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 26px;
+    border: 1px solid var(--apcs-border);
+    border-radius: 22px;
+    background: var(--apcs-bg);
+    box-shadow: var(--apcs-shadow);
+    overflow: hidden;
+}
+
+.showcase-section-apcs-home .showcase-section-right,
+.apcs-home-showcase .showcase-section-right {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: 14px;
+    min-width: 0;
+}
+
+.showcase-section-apcs-home .showcase-section-head,
+.apcs-home-showcase .showcase-section-head {
+    padding: 18px;
+    border-radius: 16px;
+    background: var(--apcs-card);
+    border: 1px solid var(--apcs-border-soft);
+}
+
+.showcase-section-apcs-home .apcs-media-header,
+.apcs-home-showcase .apcs-media-header {
+    margin-bottom: 4px;
+}
+
+.showcase-section-apcs-home .showcase-section-head h2,
+.apcs-home-showcase .showcase-section-head h2 {
+    margin: 8px 0;
+    color: var(--apcs-text);
+    font-size: clamp(1.3rem, 1.2vw + 1rem, 1.7rem);
+    line-height: 1.2;
+}
+
+.showcase-section-apcs-home .showcase-section-head p,
+.apcs-home-showcase .showcase-section-head p {
+    margin: 0;
+    color: var(--apcs-muted);
+    line-height: 1.55;
+}
+
+.showcase-section-apcs-home .showcase-section-kicker,
+.apcs-home-showcase .showcase-section-kicker {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(21, 115, 71, 0.13);
+    color: var(--apcs-green);
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.showcase-section-apcs-home .showcase-section-benefits,
+.apcs-home-showcase .showcase-section-benefits {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.showcase-section-apcs-home .showcase-section-benefit-card,
+.apcs-home-showcase .showcase-section-benefit-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 14px;
+    border: 1px solid var(--apcs-border-soft);
+    background: var(--apcs-card);
+    color: var(--apcs-text);
+    text-decoration: none;
+    box-shadow: 0 8px 18px rgba(13, 44, 79, 0.07);
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.showcase-section-apcs-home .showcase-section-benefit-card:hover,
+.apcs-home-showcase .showcase-section-benefit-card:hover {
+    transform: translateY(-2px);
+    border-color: #c9dbf0;
+    box-shadow: 0 12px 22px rgba(13, 44, 79, 0.13);
+}
+
+.showcase-section-apcs-home .showcase-section-benefit-icon,
+.apcs-home-showcase .showcase-section-benefit-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: linear-gradient(135deg, var(--apcs-navy), #245f9a);
+}
+
+.showcase-section-apcs-home .showcase-section-cta,
+.apcs-home-showcase .showcase-section-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 14px;
+    border-radius: 16px;
+    background: #f8fbfd;
+    border: 1px solid var(--apcs-border-soft);
+}
+
+.showcase-section-apcs-home .showcase-section-cta .btn,
+.apcs-home-showcase .showcase-section-cta .btn {
+    border-radius: 12px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+.showcase-section-apcs-home .showcase-section-counters,
+.apcs-home-showcase .showcase-section-counters {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.showcase-section-apcs-home .showcase-section-counter-item,
+.apcs-home-showcase .showcase-section-counter-item {
+    padding: 12px;
+    border-radius: 14px;
+    border: 1px solid var(--apcs-border-soft);
+    background: var(--apcs-card);
+    box-shadow: 0 7px 14px rgba(13, 44, 79, 0.06);
+}
+
+.showcase-section-apcs-home .showcase-section-counter-value,
+.apcs-home-showcase .showcase-section-counter-value {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 1.2rem;
+    color: var(--apcs-navy);
+    font-weight: 800;
+}
+
+.showcase-section-apcs-home .showcase-section-counter-item small,
+.apcs-home-showcase .showcase-section-counter-item small {
+    color: var(--apcs-muted);
+    font-weight: 600;
+}
+
+.apcs-media-card {
+    padding: 14px;
+    border-radius: 18px;
+    border: 1px solid var(--apcs-border-soft);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 10px 20px rgba(13, 44, 79, 0.08);
+    min-width: 0;
+}
+
+.showcase-section-apcs-home .showcase-section-widget-head,
+.apcs-home-showcase .showcase-section-widget-head {
+    margin-bottom: 10px;
+}
+
+.showcase-section-apcs-home .showcase-section-widget-head h3,
+.apcs-home-showcase .showcase-section-widget-head h3 {
+    margin: 0;
+    color: var(--apcs-navy);
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.apcs-media-video-grid {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    gap: 12px;
+    min-width: 0;
+}
+
+.apcs-video-main {
+    min-width: 0;
+}
+
+.apcs-video-frame {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #ebf1f8;
+}
+
+.apcs-video-frame iframe {
+    width: 100%;
+    height: 320px;
+    border: 0;
+    display: block;
+}
+
+.apcs-video-overlay {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    border: 0;
+    background: linear-gradient(180deg, rgba(14, 40, 72, 0.12), rgba(11, 29, 52, 0.5));
+    cursor: pointer;
+    transition: opacity 0.25s ease;
+}
+
+.apcs-video-overlay.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.apcs-video-overlay span {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-size: 22px;
+    background: linear-gradient(135deg, #163f6c, #1a8756);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.26);
+}
+
+.apcs-video-meta {
+    margin-top: 10px;
+}
+
+.apcs-video-meta h4 {
+    margin: 0;
+    color: var(--apcs-text);
+    font-size: 1.06rem;
+}
+
+.apcs-video-meta p {
+    margin: 6px 0 0;
+    color: var(--apcs-muted);
+    font-size: 0.92rem;
+}
+
+.apcs-video-meta-row {
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.apcs-video-chip {
+    padding: 4px 8px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    color: #28517d;
+    background: #ecf4ff;
+    border: 1px solid #d8e7fa;
+}
+
+.apcs-video-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+}
+
+.apcs-video-playlist-wrap {
+    min-width: 0;
+}
+
+.apcs-video-playlist {
+    display: grid;
+    gap: 8px;
+    max-height: 432px;
+    overflow: auto;
+    padding-right: 2px;
+}
+
+.apcs-video-playlist-item {
+    border: 1px solid #d8e5f3;
+    border-radius: 12px;
+    background: #fff;
+    display: grid;
+    grid-template-columns: 84px 1fr;
+    gap: 8px;
+    padding: 6px;
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.apcs-video-playlist-item.is-active {
+    border-color: #2d7cc2;
+    box-shadow: 0 10px 16px rgba(31, 91, 151, 0.16);
+}
+
+.apcs-video-playlist-item img {
+    width: 84px;
+    height: 62px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.apcs-video-playlist-content {
+    min-width: 0;
+    display: grid;
+    gap: 3px;
+}
+
+.apcs-video-playlist-content strong,
+.apcs-video-playlist-content small {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.apcs-video-playlist-content strong {
+    color: #1f3e64;
+    font-size: 0.82rem;
+}
+
+.apcs-video-playlist-content small {
+    color: #70859a;
+    font-size: 0.74rem;
+}
+
+.apcs-gallery-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.apcs-gallery-tab {
+    border: 1px solid #d6e4f3;
+    background: #f5fbff;
+    color: #21507c;
+    border-radius: 999px;
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.apcs-gallery-tab.is-active {
+    border-color: #257a53;
+    background: linear-gradient(135deg, #126b45, #1f3f68);
+    color: #fff;
+}
+
+.apcs-gallery-viewport {
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.apcs-gallery-track {
+    display: flex;
+    gap: 10px;
+    transition: transform 0.45s ease;
+    will-change: transform;
+}
+
+.apcs-gallery-slide {
+    margin: 0;
+    flex: 0 0 calc((100% - 20px) / 3);
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #d8e8f1;
+    cursor: pointer;
+}
+
+.apcs-gallery-slide img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+}
+
+.apcs-gallery-slide::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent 35%, rgba(255, 255, 255, 0.4) 50%, transparent 65%);
+    transform: translateX(-140%);
+    transition: transform 0.65s ease;
+}
+
+.apcs-gallery-slide:hover::after {
+    transform: translateX(140%);
+}
+
+.apcs-gallery-slide:hover img {
+    transform: scale(1.08);
+}
+
+.apcs-gallery-slide figcaption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 8px 10px;
+    color: #fff;
+    background: linear-gradient(180deg, transparent, rgba(8, 20, 37, 0.82));
+    display: grid;
+}
+
+.apcs-gallery-slide figcaption span {
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.apcs-gallery-slide figcaption small {
+    font-size: 0.7rem;
+}
+
+.apcs-gallery-footer {
+    margin-top: 10px;
+    text-align: right;
+}
+
+.apcs-news-panel {
+    max-height: 220px;
+    overflow: auto;
+    display: grid;
+    gap: 8px;
+    padding-right: 2px;
+}
+
+.apcs-news-item {
+    width: 100%;
+    text-align: left;
+    border: 1px solid #dce8f2;
+    border-radius: 12px;
+    background: #fff;
+    padding: 8px 10px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.apcs-news-item.priority-urgent {
+    border-left: 4px solid #d94848;
+}
+
+.apcs-news-item.priority-normal {
+    border-left: 4px solid #1a8b5a;
+}
+
+.apcs-news-date {
+    font-size: 0.72rem;
+    color: #1f4a74;
+    font-weight: 700;
+    background: #eaf3ff;
+    border-radius: 8px;
+    padding: 3px 6px;
+}
+
+.apcs-news-text {
+    color: #1f3e64;
+    font-size: 0.82rem;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.apcs-news-priority {
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: #6a7885;
+}
+
+.apcs-media-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1200;
+    display: none;
+}
+
+.apcs-media-modal.is-open {
+    display: block;
+}
+
+.apcs-media-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(7, 20, 37, 0.74);
+}
+
+.apcs-media-modal-dialog {
+    position: relative;
+    z-index: 1;
+    width: min(920px, 92vw);
+    margin: 7vh auto;
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid #dae8f3;
+    box-shadow: 0 26px 60px rgba(0, 0, 0, 0.34);
+    padding: 14px;
+}
+
+.apcs-media-modal-close {
+    position: absolute;
+    right: 12px;
+    top: 10px;
+    border: 0;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #f0f5fb;
+    color: #1f3e64;
+    cursor: pointer;
+}
+
+.apcs-media-modal-body iframe {
+    width: 100%;
+    height: min(72vh, 540px);
+    border: 0;
+    border-radius: 12px;
+}
+
+.apcs-gallery-modal-dialog {
+    width: min(960px, 94vw);
+}
+
+.apcs-gallery-modal-dialog figure {
+    margin: 0;
+}
+
+.apcs-gallery-modal-dialog img {
+    width: 100%;
+    height: min(70vh, 560px);
+    object-fit: contain;
+    background: #0f1f34;
+    border-radius: 12px;
+}
+
+.apcs-gallery-modal-dialog figcaption {
+    margin-top: 8px;
+    color: #234769;
+    font-weight: 600;
+}
+
+.apcs-gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 0;
+    background: rgba(14, 34, 58, 0.72);
+    color: #fff;
+    cursor: pointer;
+}
+
+.apcs-gallery-nav.prev {
+    left: 8px;
+}
+
+.apcs-gallery-nav.next {
+    right: 8px;
+}
+
+.apcs-news-modal-content h4 {
+    margin: 0;
+    color: #193b62;
+}
+
+.apcs-news-modal-content small {
+    display: block;
+    margin-top: 4px;
+    color: #61778f;
+}
+
+.apcs-news-modal-content p {
+    margin: 10px 0 14px;
+    color: #37526b;
+    line-height: 1.55;
+}
+
+@media (max-width: 1200px) {
+    .apcs-media-video-grid {
+        grid-template-columns: 70% 30%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .showcase-section-apcs-home .showcase-section-shell,
+    .apcs-home-showcase .showcase-section-shell {
+        grid-template-columns: 1fr;
+    }
+
+    .apcs-media-video-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .apcs-video-playlist {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-height: none;
+    }
+
+    .apcs-gallery-slide {
+        flex: 0 0 calc((100% - 10px) / 2);
+    }
+}
+
+@media (max-width: 767px) {
+    .showcase-section-apcs-home .showcase-section-shell,
+    .apcs-home-showcase .showcase-section-shell {
+        padding: 16px;
+        border-radius: 18px;
+    }
+
+    .apcs-video-frame,
+    .apcs-video-frame iframe {
+        height: 220px;
+    }
+
+    .apcs-video-playlist {
+        grid-template-columns: 1fr;
+    }
+
+    .apcs-gallery-slide {
+        flex: 0 0 100%;
+    }
+
+    .apcs-news-panel {
+        max-height: 220px;
+    }
+}
